@@ -14,6 +14,10 @@ app.get('/', async (req, res, next) => {
 	}
 })
 
+app.use((req, res, next) => {
+	next(Error('Endpoint not found'))
+})
+
 app.use((err: unknown, req: Request, res: Response) => {
 	console.log(err)
 	let errorMessage = 'An unknown error occurred'
