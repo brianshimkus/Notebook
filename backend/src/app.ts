@@ -1,8 +1,11 @@
 import 'dotenv/config'
 import express, { Request, Response } from 'express'
 import notesRoutes from './routes/notes'
+import morgan from 'morgan'
 
 const app = express()
+
+app.use(morgan('dev'))
 
 app.use(express.json())
 
