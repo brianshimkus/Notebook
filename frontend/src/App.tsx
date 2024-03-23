@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
-import { Routes } from 'react-router'
+import { Routes, Route } from 'react-router'
 import LoginModal from './components/LoginModal'
 import NavBar from './components/NavBar'
 import SignUpModal from './components/SignUpModal'
@@ -8,6 +8,7 @@ import { User } from './models/user'
 import * as NotesApi from './network/notes_api'
 import styles from './styles/App.module.css'
 import { BrowserRouter } from 'react-router-dom'
+import NotesPage from './pages/NotesPage'
 
 function App() {
 	const [loggedInUser, setLoggedInUser] = useState<User | null>(null)
@@ -37,7 +38,12 @@ function App() {
 					onLogoutSuccessful={() => setLoggedInUser(null)}
 				/>
 				<Container className={styles.pageContainer}>
-					<Routes></Routes>
+					<Routes>
+						<Route
+							path='/'
+							element={<NotesPage loggedInUser={loggedInUser} />}
+						/>
+					</Routes>
 				</Container>
 				{showSignUpModal && (
 					<SignUpModal
