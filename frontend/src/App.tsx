@@ -7,6 +7,7 @@ import styleUtils from './styles/utils.module.css'
 import * as NotesApi from './network/notes_api'
 import AddEditNoteDialog from './components/AddEditNoteDialog'
 import { FaPlus } from 'react-icons/fa'
+import SignUpModal from './components/SignUpModal'
 
 function App() {
 	const [notes, setNotes] = useState<NoteModel[]>([])
@@ -105,6 +106,9 @@ function App() {
 						setNoteToEdit(null)
 					}}
 				/>
+			)}
+			{true && (
+				<SignUpModal onDismiss={() => {}} onSignUpSuccessful={() => {}} />
 			)}
 		</Container>
 	)
