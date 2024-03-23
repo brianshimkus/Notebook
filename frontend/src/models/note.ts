@@ -1,5 +1,5 @@
 export interface Note {
-	_id: number
+	_id: string
 	title: string
 	text?: string
 	createdAt: string
