@@ -12,3 +12,8 @@
 .cardText {
 	white-space: pre-line;
 }
+
+.cardFooter {
+	font-size: 12px;
+	font-weight: bold;
+}
