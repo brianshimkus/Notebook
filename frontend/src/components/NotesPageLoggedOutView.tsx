@@ -1,3 +1,7 @@
 export default function NotesPageLoggedOutView() {
-	return <p>Please login to see your notes</p>
+	return (
+		<>
+			<h3 className='text-white mb-4'>Please login to see your notes</h3>
+		</>
+	)
 }

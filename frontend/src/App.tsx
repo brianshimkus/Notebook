@@ -9,6 +9,8 @@ import * as NotesApi from './network/notes_api'
 import styles from './styles/App.module.css'
 import { BrowserRouter } from 'react-router-dom'
 import NotesPage from './pages/NotesPage'
+import PrivacyPage from './pages/PrivacyPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
 	const [loggedInUser, setLoggedInUser] = useState<User | null>(null)
@@ -43,6 +45,8 @@ function App() {
 							path='/'
 							element={<NotesPage loggedInUser={loggedInUser} />}
 						/>
+						<Route path='/privacy' element={<PrivacyPage />} />
+						<Route path='/*' element={<NotFoundPage />} />
 					</Routes>
 				</Container>
 				{showSignUpModal && (
